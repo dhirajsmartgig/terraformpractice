@@ -33,19 +33,19 @@
 #  }
 
 #ECS Resources
-# module "ecs" {
-#   app_name            = var.app_name
-#   vpc_id              = var.vpc_id
-#   app_environment     = var.app_environment
-#   source              = "./modules/ecs"
-#   private_subnet_1_id = module.vpc.private_subnet_1_id
-#   private_subnet_2_id = module.vpc.private_subnet_2_id
-# }
-
-
-#ECR Resources
-module "ecr" {
+module "ecs" {
   app_name            = var.app_name
-  source              = "./modules/ecr"
-
+  vpc_id              = var.vpc_id
+  app_environment     = var.app_environment
+  source              = "./modules/ecs"
+  private_subnet_1_id = module.vpc.private_subnet_1_id
+  private_subnet_2_id = module.vpc.private_subnet_2_id
 }
+
+
+# #ECR Resources
+# module "ecr" {
+#   app_name            = var.app_name
+#   source              = "./modules/ecr"
+
+# }
