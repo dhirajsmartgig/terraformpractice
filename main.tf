@@ -14,24 +14,6 @@
 
  }
 
-#EC2 Resources
-# module "ec2" {
-#   app_name            = var.app_name
-#   app_environment     = var.app_environment
-#   source              = "./modules/ec2"
-#   private_subnet_1_id  = "subnet-0ca5f4b2a43445b1a"
-#   ec2-ami             = "ami-0cca134ec43cf708f"
-#   ec2-instancetype    = "t2.micro"
-#   ec2-volume-size     = 20
-# }
-
-#S3 Resources
-# module "s3" {
-#   app_name            = var.app_name
-#   app_environment     = var.app_environment
-#   source              = "./modules/s3"
-#  }
-
 #ECS Resources
 module "ecs" {
   app_name            = var.app_name
@@ -42,10 +24,3 @@ module "ecs" {
   private_subnet_2_id = module.vpc.private_subnet_2_id
 }
 
-
-# #ECR Resources
-# module "ecr" {
-#   app_name            = var.app_name
-#   source              = "./modules/ecr"
-
-# }
